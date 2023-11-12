@@ -215,29 +215,25 @@
 
 
 <!-- //////////////////////////////////   Differential Drive Plugin  //////////////////////////////// -->
+<gazebo>
+      <plugin filename="libgazebo_ros_diff_drive.so" name="vision_rpi_bot_controller">
+        <odometry_frame>odom</odometry_frame>
+        <commandTopic>cmd_vel</commandTopic>
+        <publish_odom>true</publish_odom>
+        <publish_odom_tf>true</publish_odom_tf>
+        <update_rate>15.0</update_rate>
+        <left_joint>wheel_left_joint</left_joint>
+        <right_joint>wheel_right_joint</right_joint>
+        <wheel_separation>0.47</wheel_separation>
+        <wheel_diameter>0.2</wheel_diameter>
+        <max_wheel_acceleration>2</max_wheel_acceleration>
+        <robotBaseFrame>base_link</robotBaseFrame>
+
+      </plugin>
+    </gazebo>
 
 
 <!-- ///////////////////////////////////////// Camera Plugin ////////////////////// -->
 
-<gazebo>
-  <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-    <!-- <updateRate>${update_rate}</updateRate> -->
-    <leftJoint>wheel_left_joint</leftJoint>
-    <rightJoint>wheel_right_joint</rightJoint>
-    <wheelSeparation>0.47</wheelSeparation>
-    <wheelDiameter>0.2</wheelDiameter>
-    <wheelAcceleration>1.0</wheelAcceleration>
-    <!-- <wheelTorque>20</wheelTorque> -->
-    <commandTopic>cmd_vel</commandTopic>
-    <odometryTopic>odom</odometryTopic>
-    <odometryFrame>odom</odometryFrame>
-    <robotBaseFrame>base_link</robotBaseFrame>
-    <odometrySource>1</odometrySource>
-    <publishWheelTF>true</publishWheelTF>
-    <publishOdom>true</publishOdom>
-    <publishWheelJointState>true</publishWheelJointState>
-    <legacyMode>false</legacyMode>
-  </plugin>
-</gazebo>
 
 </robot>
